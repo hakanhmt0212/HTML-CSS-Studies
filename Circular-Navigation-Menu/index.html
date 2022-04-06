@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circular Navigation Menu</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <ul class="menu">
+        <div class="toggle">
+            <i class="fa-solid fa-plus"></i>
+        </div>
+        <li style="--i:0;" class="active">
+            <a href="#"><i class="fa-solid fa-house"></i></a>
+        </li>
+        <li style="--i:1;">
+            <a href="#"><i class="fa-solid fa-user"></i></a>
+        </li>
+        <li style="--i:2;">
+            <a href="#"><i class="fa-solid fa-gear"></i></a>
+        </li>
+        <li style="--i:3;">
+            <a href="#"><i class="fa-solid fa-envelope"></i></a>
+        </li>
+        <li style="--i:4;">
+            <a href="#"><i class="fa-solid fa-gamepad"></i></i></a>
+        </li>
+        <li style="--i:5;">
+            <a href="#"><i class="fa-solid fa-phone"></i></a>
+        </li>
+        <li style="--i:6;">
+            <a href="#"><i class="fa-solid fa-camera"></i></a>
+        </li>
+        <li style="--i:7;">
+            <a href="#"><i class="fa-solid fa-keyboard"></i></a>
+        </li>
+    </ul>
+    <script>
+        let menuToggle = document.querySelector('.toggle');
+        let menu = document.querySelector('.menu');
+
+        menuToggle.onclick = function(){
+            menu.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        }
+
+        const list = document.querySelectorAll('li');
+        function activeLink(){
+            list.forEach((item) => 
+            item.classList.remove('active'));
+            this.classList.add('active')
+        }
+
+        list.forEach((item) => 
+        item.addEventListener('click',activeLink))
+    </script>
+    <script src="https://kit.fontawesome.com/4837218dc5.js" crossorigin="anonymous"></script>
+</body>
+</html>
